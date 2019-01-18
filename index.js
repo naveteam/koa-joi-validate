@@ -41,7 +41,7 @@ function validate (validationObj) {
       validateObject(ctx.query, 'URL Query', validationObj.query)
 
       if (ctx.request.body) {
-        validateObject(ctx.request.body, 'Request Body', validationObj.body)
+        validateObject(ctx.request.body, 'Request Body', validationObj.body, { stripUnknown: true })
       }
 
       return next()
